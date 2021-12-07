@@ -1,0 +1,51 @@
+The Square Module:
+
+    >>> Square = __import__("4-square").Square
+
+Correct Usage:
+
+    >>> square = Square()
+    >>> print("{:d}".format(square.size))
+    0
+    >>> print('{}'.format(square.area()))
+    0
+
+    >>> my_square = Square(25)
+    >>> print("{:d}".format(my_square.size))
+    25
+    >>> print('{}'.format(my_square.area()))
+    625
+
+    >>> my_square.size = 5
+    >>> print("{:d}".format(my_square.size))
+    5
+    >>> print('{:d}'.format(my_square.area()))
+    25
+
+On Errors:
+
+    >>> my_square.size = "Five"
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> my_square.size = -5
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+    >>> print(my_square.__size)
+    Traceback (most recent call last):
+    AttributeError: 'Square' object has no attribute '__size'
+
+    >>> print(my_square.__dict__)
+    {'_Square__size': 5}
+
+    >>> print(type(my_square))
+    <class '4-square.Square'>
+
+    >>> new_square = Square("25 Feet")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> new_square = Square(-1)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
